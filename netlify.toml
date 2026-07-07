@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Netlify automatically installs the Next.js runtime (@netlify/plugin-nextjs),
+# which handles the publish directory, SSR, and image optimization.
