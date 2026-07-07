@@ -29,14 +29,14 @@ export function SiteNav() {
   return (
     <header className="site-nav sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-[90px] max-w-[1920px] items-center justify-between px-6 md:h-[124px] md:px-[100px] xl:px-[200px]">
-        <Link href="/" className="shrink-0">
+        <Link prefetch={false} href="/" className="shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo-hor.png" alt="Triagenius" className="h-12 md:h-16" />
         </Link>
 
         <div className="flex items-center gap-10">
           <nav className="hidden items-center gap-10 text-[18px] font-semibold text-black/90 lg:flex">
-            <Link
+            <Link prefetch={false}
               href="/"
               className={`transition-colors hover:text-brand-teal ${isActive("/") ? "text-brand-teal" : ""}`}
             >
@@ -56,7 +56,7 @@ export function SiteNav() {
               <div className="absolute left-1/2 top-full hidden -translate-x-1/2 pt-3 group-hover:block">
                 <div className="w-56 rounded-xl bg-white py-2 text-base font-normal shadow-xl">
                   {TRIAGENIUS_CHILDREN.map((c) => (
-                    <Link key={c.href} href={c.href} className="block px-5 py-2.5 hover:bg-gray-50 hover:text-brand-teal">
+                    <Link prefetch={false} key={c.href} href={c.href} className="block px-5 py-2.5 hover:bg-gray-50 hover:text-brand-teal">
                       {c.label}
                     </Link>
                   ))}
@@ -64,10 +64,10 @@ export function SiteNav() {
               </div>
             </div>
 
-            <Link href="/plans" className={`transition-colors hover:text-brand-teal ${isActive("/plans") ? "text-brand-teal" : ""}`}>
+            <Link prefetch={false} href="/plans" className={`transition-colors hover:text-brand-teal ${isActive("/plans") ? "text-brand-teal" : ""}`}>
               Plans
             </Link>
-            <Link href="/contact" className={`transition-colors hover:text-brand-teal ${isActive("/contact") ? "text-brand-teal" : ""}`}>
+            <Link prefetch={false} href="/contact" className={`transition-colors hover:text-brand-teal ${isActive("/contact") ? "text-brand-teal" : ""}`}>
               Contact Us
             </Link>
           </nav>
@@ -91,7 +91,7 @@ export function SiteNav() {
       {open && (
         <nav className="flex flex-col gap-1 px-6 pb-4 font-semibold text-black/90 lg:hidden">
           {LINKS.map((l, i) => (
-            <Link
+            <Link prefetch={false}
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}

@@ -62,7 +62,7 @@ export default function PlansPage() {
                 <p className="font-bold text-[48px] leading-none text-white">€99</p>
                 <p className="mt-2 text-[18px] text-white/90">/month</p>
               </div>
-              <Link href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-white hover:text-[#490073] transition-colors">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-white hover:text-[#490073] transition-colors">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-white/90">
                 {["10 users", "Unlimited patients", "AI recommendations", "Clinical reports", "Dashboard", "Export to PDF", "Email support"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check light /><span>{f}</span></li>
@@ -83,7 +83,7 @@ export default function PlansPage() {
                 <p className="font-bold text-[48px] leading-none text-black">€499</p>
                 <p className="mt-2 text-[18px] text-[#494747]">/month</p>
               </div>
-              <Link href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["Unlimited users", "Multi-department", "Role management", "KPI dashboards", "Analytics", "Custom workflows", "API", "HL7/FHIR integration", "Audit logs"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
@@ -103,7 +103,7 @@ export default function PlansPage() {
                 <p className="font-bold text-[48px] leading-none text-black">€2,000</p>
                 <p className="mt-2 text-[18px] text-[#494747]">/month</p>
               </div>
-              <Link href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["Unlimited everything", "White label", "Dedicated AI models", "SSO", "Active Directory", "On-premise deployment", "SLA", "Custom integrations", "Training", "Account manager"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>

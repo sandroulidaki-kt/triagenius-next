@@ -27,17 +27,17 @@ export function SiteFooter() {
           <div>
             <p className="mb-4 text-lg font-semibold text-black">Why Triagenius</p>
             <ul className="space-y-3 text-sm text-black/80">
-              <li><Link href="/features" className="hover:text-brand-teal">Features</Link></li>
-              <li><Link href="/how-it-works" className="hover:text-brand-teal">How it works</Link></li>
-              <li><Link href="/how-it-works#faq" className="hover:text-brand-teal">FAQ</Link></li>
+              <li><Link prefetch={false} href="/features" className="hover:text-brand-teal">Features</Link></li>
+              <li><Link prefetch={false} href="/how-it-works" className="hover:text-brand-teal">How it works</Link></li>
+              <li><Link prefetch={false} href="/how-it-works#faq" className="hover:text-brand-teal">FAQ</Link></li>
             </ul>
           </div>
 
           <div>
             <p className="mb-4 text-lg font-semibold text-black">Product</p>
             <ul className="space-y-3 text-sm text-black/80">
-              <li><Link href="/plans" className="hover:text-brand-teal">Pricing Plans</Link></li>
-              <li><Link href="/training-support" className="hover:text-brand-teal">Training &amp; support</Link></li>
+              <li><Link prefetch={false} href="/plans" className="hover:text-brand-teal">Pricing Plans</Link></li>
+              <li><Link prefetch={false} href="/training-support" className="hover:text-brand-teal">Training &amp; support</Link></li>
             </ul>
           </div>
 
@@ -55,7 +55,7 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm text-black/80">
               <li><a href="#" className="hover:text-brand-teal">Download iOS App</a></li>
               <li><a href="#" className="hover:text-brand-teal">Download Android App</a></li>
-              <li><Link href="/contact" className="hover:text-brand-teal">Contact us</Link></li>
+              <li><Link prefetch={false} href="/contact" className="hover:text-brand-teal">Contact us</Link></li>
             </ul>
           </div>
         </div>

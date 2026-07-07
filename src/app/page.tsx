@@ -74,7 +74,7 @@ export default function HomePage() {
                 <p>Seamlessly designed for healthcare professionals, doctors and nurses, this mobile app revolutionizes the medical triage process.</p>
                 <p>With features tailored to streamline symptom evaluation, emergency level identification, and seamless integration with medical databases, our mobile app ensures <strong className="font-bold text-black">quick</strong> and <strong className="font-bold text-black">accurate diagnosis</strong>.</p>
               </div>
-              <Link href="/how-it-works" className="mt-6 inline-flex items-center gap-2 font-semibold text-[18px] text-[#28b7b3] hover:underline">
+              <Link prefetch={false} href="/how-it-works" className="mt-6 inline-flex items-center gap-2 font-semibold text-[18px] text-[#28b7b3] hover:underline">
                 Learn More
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/home-icon-arrow-right.svg" alt="" className="w-3 h-3" />
@@ -167,7 +167,7 @@ export default function HomePage() {
                 </div>
               </li>
               <li>
-                <Link href="/features" className="inline-flex items-center gap-2 font-semibold text-[18px] text-[#28b7b3] hover:underline">
+                <Link prefetch={false} href="/features" className="inline-flex items-center gap-2 font-semibold text-[18px] text-[#28b7b3] hover:underline">
                   Explore Features
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/assets/home-icon-arrow-right.svg" alt="" className="w-3 h-3" />

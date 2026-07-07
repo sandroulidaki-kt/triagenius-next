@@ -119,7 +119,7 @@ export default function ContactPage() {
           {/* Support link */}
           <p className="max-w-[1100px] mx-auto mt-8 text-[16px] md:text-[18px] text-black">
             Looking for support? Visit{" "}
-            <Link
+            <Link prefetch={false}
               href="/training-support"
               className="text-[#28b7b3] underline decoration-from-font hover:text-[#490073] transition-colors"
             >
