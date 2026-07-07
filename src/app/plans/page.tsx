@@ -3,85 +3,9 @@ import Link from "next/link";
 
 export const metadata: Metadata = { title: "Plans" };
 
-type Plan = {
-  name: string;
-  subtitle: string;
-  price: string;
-  period?: string;
-  cta: string;
-  disabled?: boolean;
-  featured?: boolean;
-  features: string[];
-  icon: React.ReactNode;
-};
-
-const SparkleIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-    <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />
-    <path d="M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" />
-  </svg>
-);
-const CrownIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-    <path d="M3 8l4.5 3.5L12 5l4.5 6.5L21 8l-1.6 10H4.6z" />
-    <path d="M4.6 18h14.8" />
-  </svg>
-);
-const BuildingIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-    <path d="M5 21V4a1 1 0 011-1h8a1 1 0 011 1v17M15 9h3a1 1 0 011 1v11M3 21h18" />
-    <path d="M8 7h1M11 7h1M8 11h1M11 11h1M8 15h1M11 15h1" />
-  </svg>
-);
-const ShieldIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-    <path d="M12 3l7 2.5V11c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V5.5z" />
-  </svg>
-);
-
-const PLANS: Plan[] = [
-  {
-    name: "Free",
-    subtitle: "Perfect for demonstrations.",
-    price: "€0",
-    cta: "Current Plan",
-    disabled: true,
-    icon: SparkleIcon,
-    features: ["1 user", "20 patients/month", "Basic triage", "Limited AI recommendations", "Community support"],
-  },
-  {
-    name: "Professional",
-    subtitle: "For individual clinics.",
-    price: "€99",
-    period: "/month",
-    cta: "Subscribe",
-    featured: true,
-    icon: CrownIcon,
-    features: ["10 users", "Unlimited patients", "AI recommendations", "Clinical reports", "Dashboard", "Export to PDF", "Email support"],
-  },
-  {
-    name: "Business",
-    subtitle: "For hospitals.",
-    price: "€499",
-    period: "/month",
-    cta: "Subscribe",
-    icon: BuildingIcon,
-    features: ["Unlimited users", "Multi-department", "Role management", "KPI dashboards", "Analytics", "Custom workflows", "API", "HL7/FHIR integration", "Audit logs"],
-  },
-  {
-    name: "Enterprise",
-    subtitle: "Large hospitals & governments.",
-    price: "€2,000",
-    period: "/month",
-    cta: "Subscribe",
-    icon: ShieldIcon,
-    features: ["Unlimited everything", "White label", "Dedicated AI models", "SSO", "Active Directory", "On-premise deployment", "SLA", "Custom integrations", "Training", "Account manager"],
-  },
-];
-
-function Check({ featured }: { featured?: boolean }) {
+function Check({ light }: { light?: boolean }) {
   return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={`mt-0.5 h-4 w-4 shrink-0 ${featured ? "text-[#490073]" : "text-[#28b7b3]"}`}>
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={`mt-0.5 h-4 w-4 shrink-0 ${light ? "text-white" : "text-[#28b7b3]"}`}>
       <path d="M4 10.5l4 4 8-9" />
     </svg>
   );
@@ -108,65 +32,85 @@ export default function PlansPage() {
       <section className="bg-[#f8f8ff]">
         <div className="max-w-[1920px] mx-auto px-6 md:px-[100px] xl:px-[200px] py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
-            {PLANS.map((plan) => (
-              <div
-                key={plan.name}
-                className={`relative flex h-full flex-col rounded-[24px] bg-white p-7 md:p-8 ${
-                  plan.featured
-                    ? "border-2 border-[#490073] shadow-[0px_12px_30px_0px_rgba(73,0,115,0.18)]"
-                    : "border border-black/10 shadow-[0px_3px_10px_0px_rgba(0,0,0,0.06)]"
-                }`}
-              >
-                {plan.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#490073] px-4 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
-                    Most Popular
-                  </span>
-                )}
 
-                <div className="flex items-start gap-3">
-                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${plan.featured ? "bg-[#490073]/10 text-[#490073]" : "bg-[#28b7b3]/10 text-[#28b7b3]"}`}>
-                    {plan.icon}
-                  </span>
-                  <div>
-                    <h3 className="text-[22px] font-bold leading-tight text-black">{plan.name}</h3>
-                    <p className="mt-0.5 text-[14px] text-[#494747]">{plan.subtitle}</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex items-end gap-1">
-                  <span className="text-[40px] font-bold leading-none text-black">{plan.price}</span>
-                  {plan.period && <span className="pb-1 text-[16px] text-[#494747]">{plan.period}</span>}
-                </div>
-
-                {plan.disabled ? (
-                  <button
-                    type="button"
-                    disabled
-                    className="mt-6 w-full cursor-default rounded-2xl bg-black/[0.06] py-3.5 text-[16px] font-semibold text-black/40"
-                  >
-                    {plan.cta}
-                  </button>
-                ) : (
-                  <Link
-                    href="/contact"
-                    className={`mt-6 block w-full rounded-2xl py-3.5 text-center text-[16px] font-semibold text-white transition-colors ${
-                      plan.featured ? "bg-[#490073] hover:bg-[#3a005c]" : "bg-[#28b7b3] hover:bg-[#1f9b98]"
-                    }`}
-                  >
-                    {plan.cta}
-                  </Link>
-                )}
-
-                <ul className="mt-7 space-y-3 text-[15px] text-black/80">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <Check featured={plan.featured} />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* FREE */}
+            <div className="flex flex-col items-center text-center bg-white rounded-[40px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.16)] px-8 py-10">
+              <div className="h-[72px] w-[72px] rounded-[10px] bg-[#9de5e3]" aria-hidden="true"></div>
+              <h3 className="mt-8 font-semibold text-[24px] uppercase tracking-wide text-black">Free</h3>
+              <p className="mt-3 text-[18px] text-[#494747]">Perfect for demonstrations.</p>
+              <div className="mt-6">
+                <p className="font-bold text-[48px] leading-none text-black">€0</p>
               </div>
-            ))}
+              <span className="mt-8 inline-block font-semibold text-[24px] text-[#494747]">Current Plan</span>
+              <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
+                {["1 user", "20 patients/month", "Basic triage", "Limited AI recommendations", "Community support"].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* PROFESSIONAL (featured) */}
+            <div className="relative flex flex-col items-center text-center bg-[#28b7b3] rounded-[40px] shadow-[0px_8px_20px_0px_rgba(40,183,179,0.35)] px-8 py-10 md:-mt-4 md:mb-4">
+              <span className="absolute top-5 right-6 rounded-full bg-white/90 px-3 py-1 text-[12px] font-semibold uppercase tracking-wide text-[#28b7b3]">Most Popular</span>
+              <div className="relative h-[84px] w-[84px]" aria-hidden="true">
+                <div className="absolute left-0 top-0 h-[84px] w-[84px] rounded-[10px] bg-[#9de5e3]"></div>
+                <div className="absolute left-3 top-3 h-[72px] w-[72px] rounded-[10px] bg-[#cef1f1]"></div>
+              </div>
+              <h3 className="mt-8 font-semibold text-[24px] uppercase tracking-wide text-white">Professional</h3>
+              <p className="mt-3 text-[18px] text-white/90">For individual clinics.</p>
+              <div className="mt-6">
+                <p className="font-bold text-[48px] leading-none text-white">€99</p>
+                <p className="mt-2 text-[18px] text-white/90">/month</p>
+              </div>
+              <Link href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-white hover:text-[#490073] transition-colors">Subscribe</Link>
+              <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-white/90">
+                {["10 users", "Unlimited patients", "AI recommendations", "Clinical reports", "Dashboard", "Export to PDF", "Email support"].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5"><Check light /><span>{f}</span></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* BUSINESS */}
+            <div className="flex flex-col items-center text-center bg-white rounded-[40px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.16)] px-8 py-10">
+              <div className="relative h-[92px] w-[92px]" aria-hidden="true">
+                <div className="absolute left-0 top-0 h-[92px] w-[92px] rounded-[10px] bg-[#9de5e3]"></div>
+                <div className="absolute left-0 top-0 h-[72px] w-[72px] rounded-[10px] bg-[#e5f7f7]"></div>
+                <div className="absolute left-6 top-6 h-[48px] w-[48px] rounded-[10px] bg-[#cef1f1]"></div>
+              </div>
+              <h3 className="mt-8 font-semibold text-[24px] uppercase tracking-wide text-black">Business</h3>
+              <p className="mt-3 text-[18px] text-[#494747]">For hospitals.</p>
+              <div className="mt-6">
+                <p className="font-bold text-[48px] leading-none text-black">€499</p>
+                <p className="mt-2 text-[18px] text-[#494747]">/month</p>
+              </div>
+              <Link href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
+              <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
+                {["Unlimited users", "Multi-department", "Role management", "KPI dashboards", "Analytics", "Custom workflows", "API", "HL7/FHIR integration", "Audit logs"].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* ENTERPRISE */}
+            <div className="flex flex-col items-center text-center bg-white rounded-[40px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.16)] px-8 py-10">
+              <div className="relative h-[92px] w-[92px]" aria-hidden="true">
+                <div className="absolute left-0 top-0 h-[92px] w-[92px] rounded-[16px] border-[1.5px] border-solid border-[#9de5e3]"></div>
+                <div className="absolute left-2.5 top-2.5 h-[72px] w-[72px] rounded-[10px] bg-[#9de5e3]"></div>
+              </div>
+              <h3 className="mt-8 font-semibold text-[24px] uppercase tracking-wide text-black">Enterprise</h3>
+              <p className="mt-3 text-[18px] text-[#494747]">Large hospitals &amp; governments.</p>
+              <div className="mt-6">
+                <p className="font-bold text-[48px] leading-none text-black">€2,000</p>
+                <p className="mt-2 text-[18px] text-[#494747]">/month</p>
+              </div>
+              <Link href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
+              <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
+                {["Unlimited everything", "White label", "Dedicated AI models", "SSO", "Active Directory", "On-premise deployment", "SLA", "Custom integrations", "Training", "Account manager"].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
 
