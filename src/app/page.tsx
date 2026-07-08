@@ -29,8 +29,8 @@ export default function HomePage() {
           </div>
 
           <div className="flex-1 relative flex items-center justify-center min-h-[380px] w-full">
-            <div className="absolute bg-[#9de5e3] h-[220px] w-[220px] md:h-[292px] md:w-[300px] rounded-[40px] -translate-x-32 md:-translate-x-40 -translate-y-8"></div>
-            <div className="absolute bg-[#28b7b3] h-[220px] w-[220px] md:h-[292px] md:w-[300px] rounded-[40px] translate-x-32 md:translate-x-40 translate-y-14"></div>
+            <div className="absolute bg-[#9de5e3] h-[220px] w-[220px] md:h-[292px] md:w-[300px] rounded-[40px] -translate-x-20 md:-translate-x-24 -translate-y-6"></div>
+            <div className="absolute bg-[#28b7b3] h-[220px] w-[220px] md:h-[292px] md:w-[300px] rounded-[40px] translate-x-20 md:translate-x-24 translate-y-10"></div>
             <div className="relative flex items-end gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/home-hero-symptom-area.png" alt="Triagenius symptom assessment screen" className="relative z-10 w-[150px] sm:w-[210px] rounded-2xl shadow-xl" />
