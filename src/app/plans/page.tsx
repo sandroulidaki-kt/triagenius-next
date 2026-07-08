@@ -41,7 +41,7 @@ export default function PlansPage() {
               <div className="mt-6">
                 <p className="font-bold text-[48px] leading-none text-black">€0</p>
               </div>
-              <span className="mt-8 inline-block font-semibold text-[24px] text-[#494747]">Current Plan</span>
+              <button type="button" disabled className="mt-8 w-full cursor-default rounded-2xl bg-black/[0.06] py-3.5 text-[16px] font-semibold text-black/40">Current Plan</button>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["1 user", "20 patients/month", "Basic triage", "Limited AI recommendations", "Community support"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
@@ -62,7 +62,7 @@ export default function PlansPage() {
                 <p className="font-bold text-[48px] leading-none text-white">€99</p>
                 <p className="mt-2 text-[18px] text-white/90">/month</p>
               </div>
-              <Link prefetch={false} href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-white hover:text-[#490073] transition-colors">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 block w-full rounded-2xl bg-white py-3.5 text-center text-[16px] font-semibold text-[#28b7b3] transition-colors hover:bg-white/90">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-white/90">
                 {["10 users", "Unlimited patients", "AI recommendations", "Clinical reports", "Dashboard", "Export to PDF", "Email support"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check light /><span>{f}</span></li>
@@ -83,7 +83,7 @@ export default function PlansPage() {
                 <p className="font-bold text-[48px] leading-none text-black">€499</p>
                 <p className="mt-2 text-[18px] text-[#494747]">/month</p>
               </div>
-              <Link prefetch={false} href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 block w-full rounded-2xl bg-[#28b7b3] py-3.5 text-center text-[16px] font-semibold text-white transition-colors hover:bg-[#1f9b98]">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["Unlimited users", "Multi-department", "Role management", "KPI dashboards", "Analytics", "Custom workflows", "API", "HL7/FHIR integration", "Audit logs"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
@@ -103,7 +103,7 @@ export default function PlansPage() {
                 <p className="font-bold text-[48px] leading-none text-black">€2,000</p>
                 <p className="mt-2 text-[18px] text-[#494747]">/month</p>
               </div>
-              <Link prefetch={false} href="/contact" className="mt-8 inline-block font-semibold text-[24px] text-black hover:text-[#28b7b3] transition-colors">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 block w-full rounded-2xl bg-[#28b7b3] py-3.5 text-center text-[16px] font-semibold text-white transition-colors hover:bg-[#1f9b98]">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["Unlimited everything", "White label", "Dedicated AI models", "SSO", "Active Directory", "On-premise deployment", "SLA", "Custom integrations", "Training", "Account manager"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
