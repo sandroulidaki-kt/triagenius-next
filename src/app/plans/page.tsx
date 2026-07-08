@@ -41,7 +41,7 @@ export default function PlansPage() {
               <div className="mt-6">
                 <p className="font-bold text-[48px] leading-none text-black">€0</p>
               </div>
-              <button type="button" disabled className="mt-8 w-full cursor-default rounded-2xl bg-black/[0.06] py-3.5 text-[16px] font-semibold text-black/40">Current Plan</button>
+              <Link prefetch={false} href="/contact" className="mt-8 block w-full rounded-2xl bg-[#28b7b3] py-3.5 text-center text-[16px] font-semibold text-white transition-colors hover:bg-[#1f9b98]">Subscribe</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["1 user", "20 patients/month", "Basic triage", "Limited AI recommendations", "Community support"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
@@ -51,7 +51,7 @@ export default function PlansPage() {
 
             {/* PROFESSIONAL (featured) */}
             <div className="relative flex flex-col items-center text-center bg-[#28b7b3] rounded-[40px] shadow-[0px_8px_20px_0px_rgba(40,183,179,0.35)] px-8 py-10 md:-mt-4 md:mb-4">
-              <span className="absolute top-5 right-6 rounded-full bg-white/90 px-3 py-1 text-[12px] font-semibold uppercase tracking-wide text-[#28b7b3]">Most Popular</span>
+              <span className="absolute -top-3 right-6 z-10 rounded-full bg-white px-3 py-1 text-[12px] font-semibold uppercase tracking-wide text-[#28b7b3] shadow-[0px_2px_6px_0px_rgba(0,0,0,0.12)]">Most Popular</span>
               <div className="relative h-[84px] w-[84px]" aria-hidden="true">
                 <div className="absolute left-0 top-0 h-[84px] w-[84px] rounded-[10px] bg-[#9de5e3]"></div>
                 <div className="absolute left-3 top-3 h-[72px] w-[72px] rounded-[10px] bg-[#cef1f1]"></div>
