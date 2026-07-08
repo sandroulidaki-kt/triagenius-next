@@ -41,7 +41,7 @@ export default function PlansPage() {
               <div className="mt-6">
                 <p className="font-bold text-[48px] leading-none text-black">€0</p>
               </div>
-              <Link prefetch={false} href="/contact" className="mt-8 block w-full rounded-2xl bg-[#28b7b3] py-3.5 text-center text-[16px] font-semibold text-white transition-colors hover:bg-[#1f9b98]">Subscribe</Link>
+              <Link prefetch={false} href="/contact" className="mt-8 block w-full rounded-2xl bg-[#28b7b3] py-3.5 text-center text-[16px] font-semibold text-white transition-colors hover:bg-[#1f9b98]">Get Started</Link>
               <ul className="mt-8 w-full space-y-3 text-left text-[16px] text-[#494747]">
                 {["1 user", "20 patients/month", "Basic triage", "Limited AI recommendations", "Community support"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5"><Check /><span>{f}</span></li>
